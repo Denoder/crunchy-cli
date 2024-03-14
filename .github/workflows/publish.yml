@@ -17,7 +17,7 @@ jobs:
 
       - name: Generate crunchy-cli sha sum
         run: |
-          curl -LO https://github.com/crunchy-labs/crunchy-cli/archive/refs/tags/${{ github.ref_name }}.tar.gz
+          curl -LO https://github.com/Denoder/crunchy-cli/archive/refs/tags/${{ github.ref_name }}.tar.gz
           echo "CRUNCHY_CLI_SHA256=$(sha256sum ${{ github.ref_name }}.tar.gz | cut -f 1 -d ' ')" >> $GITHUB_ENV
 
       - name: Generate crunchy-cli PKGBUILD
@@ -38,11 +38,11 @@ jobs:
 
       - name: Generate crunchy-cli-bin sha sums
         run: |
-          curl -LO https://github.com/crunchy-labs/crunchy-cli/releases/download/${{ github.ref_name }}/crunchy-cli-${{ github.ref_name }}-linux-x86_64
-          curl -LO https://github.com/crunchy-labs/crunchy-cli/releases/download/${{ github.ref_name }}/crunchy-cli-${{ github.ref_name }}-linux-aarch64
-          curl -LO https://github.com/crunchy-labs/crunchy-cli/releases/download/${{ github.ref_name }}/crunchy-cli-${{ github.ref_name }}-completions.zip
-          curl -LO https://github.com/crunchy-labs/crunchy-cli/releases/download/${{ github.ref_name }}/crunchy-cli-${{ github.ref_name }}-manpages.zip
-          curl -LO https://raw.githubusercontent.com/crunchy-labs/crunchy-cli/${{ github.ref_name }}/LICENSE
+          curl -LO https://github.com/Denoder/crunchy-cli/releases/download/${{ github.ref_name }}/crunchy-cli-${{ github.ref_name }}-linux-x86_64
+          curl -LO https://github.com/Denoder/crunchy-cli/releases/download/${{ github.ref_name }}/crunchy-cli-${{ github.ref_name }}-linux-aarch64
+          curl -LO https://github.com/Denoder/crunchy-cli/releases/download/${{ github.ref_name }}/crunchy-cli-${{ github.ref_name }}-completions.zip
+          curl -LO https://github.com/Denoder/crunchy-cli/releases/download/${{ github.ref_name }}/crunchy-cli-${{ github.ref_name }}-manpages.zip
+          curl -LO https://raw.githubusercontent.com/Denoder/crunchy-cli/${{ github.ref_name }}/LICENSE
           echo "CRUNCHY_CLI_BIN_x86_64_SHA256=$(sha256sum crunchy-cli-${{ github.ref_name }}-linux-x86_64 | cut -f 1 -d ' ')" >> $GITHUB_ENV
           echo "CRUNCHY_CLI_BIN_aarch64_SHA256=$(sha256sum crunchy-cli-${{ github.ref_name }}-linux-aarch64 | cut -f 1 -d ' ')" >> $GITHUB_ENV
           echo "CRUNCHY_CLI_BIN_COMPLETIONS_SHA256=$(sha256sum crunchy-cli-${{ github.ref_name }}-completions.zip | cut -f 1 -d ' ')" >> $GITHUB_ENV
