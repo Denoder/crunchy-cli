@@ -12,16 +12,16 @@ depends=('ffmpeg')
 provides=('crunchy-cli')
 conflicts=('crunchy-cli')
 source_x86_64=(
-  "crunchy-cli::https://github.com/crunchy-labs/crunchy-cli/releases/download/v${pkgver}/crunchy-cli-v${pkgver}-linux-x86_64"
-  "manpages.zip::https://github.com/crunchy-labs/crunchy-cli/releases/download/v${pkgver}/crunchy-cli-v${pkgver}-manpages.zip"
-  "completions.zip::https://github.com/crunchy-labs/crunchy-cli/releases/download/v${pkgver}/crunchy-cli-v${pkgver}-completions.zip"
-  "LICENSE::https://raw.githubusercontent.com/crunchy-labs/crunchy-cli/v${pkgver}/LICENSE"
+  "crunchy-cli::https://github.com/crunchy-labs/Denoder/releases/download/v${pkgver}/crunchy-cli-v${pkgver}-linux-x86_64"
+  "manpages.zip::https://github.com/crunchy-labs/Denoder/releases/download/v${pkgver}/crunchy-cli-v${pkgver}-manpages.zip"
+  "completions.zip::https://github.com/crunchy-labs/Denoder/releases/download/v${pkgver}/crunchy-cli-v${pkgver}-completions.zip"
+  "LICENSE::https://raw.githubusercontent.com/crunchy-labs/Denoder/v${pkgver}/LICENSE"
 )
 source_aarch64=(
-  "crunchy-cli::https://github.com/crunchy-labs/crunchy-cli/releases/download/v${pkgver}/crunchy-cli-v${pkgver}-linux-aarch64"
-  "manpages.zip::https://github.com/crunchy-labs/crunchy-cli/releases/download/v${pkgver}/crunchy-cli-v${pkgver}-manpages.zip"
-  "completions.zip::https://github.com/crunchy-labs/crunchy-cli/releases/download/v${pkgver}/crunchy-cli-v${pkgver}-completions.zip"
-  "LICENSE::https://raw.githubusercontent.com/crunchy-labs/crunchy-cli/v${pkgver}/LICENSE"
+  "crunchy-cli::https://github.com/crunchy-labs/Denoder/releases/download/v${pkgver}/crunchy-cli-v${pkgver}-linux-aarch64"
+  "manpages.zip::https://github.com/crunchy-labs/Denoder/releases/download/v${pkgver}/crunchy-cli-v${pkgver}-manpages.zip"
+  "completions.zip::https://github.com/crunchy-labs/Denoder/releases/download/v${pkgver}/crunchy-cli-v${pkgver}-completions.zip"
+  "LICENSE::https://raw.githubusercontent.com/crunchy-labs/Denoder/v${pkgver}/LICENSE"
 )
 noextract=("manpages.zip" "completions.zip")
 sha256sums_x86_64=('$CI_AMD_BINARY_SHA_SUM' '$CI_MANPAGES_SHA_SUM' '$CI_COMPLETIONS_SHA_SUM' '$CI_LICENSE_SHA_SUM')
@@ -44,5 +44,5 @@ package() {
   install -Dm644 completions/crunchy-cli.bash $pkgdir/usr/share/bash-completion/completions/crunchy-cli
   install -Dm644 completions/_crunchy-cli $pkgdir/usr/share/zsh/site-functions/_crunchy-cli
   install -Dm644 completions/crunchy-cli.fish $pkgdir/usr/share/fish/vendor_completions.d/crunchy-cli.fish
-  install -Dm644 LICENSE $pkgdir/usr/share/licenses/crunchy-cli/LICENSE
+  install -Dm644 LICENSE $pkgdir/usr/share/licenses/Denoder/LICENSE
 }
