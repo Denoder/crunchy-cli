@@ -180,10 +180,10 @@ impl From<&Stream> for FormatStream {
                 ),
                 |v| {
                     (
-                        v.adaptive_dash.clone().unwrap_or_default().url,
-                        v.drm_adaptive_dash.clone().unwrap_or_default().url,
-                        v.adaptive_hls.clone().unwrap_or_default().url,
-                        v.drm_adaptive_hls.clone().unwrap_or_default().url,
+                        v.vo_adaptive_dash.clone().unwrap_or_default().url,
+                        v.vo_drm_adaptive_dash.clone().unwrap_or_default().url,
+                        v.vo_adaptive_hls.clone().unwrap_or_default().url,
+                        v.vo_drm_adaptive_hls.clone().unwrap_or_default().url,
                     )
                 },
             );
